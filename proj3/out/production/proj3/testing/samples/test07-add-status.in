@@ -1,0 +1,20 @@
+# Check add stage
+> init
+<<<
++ a.txt wug.txt
+> add a.txt
+<<<
+> status
+=== Branches ===
+*master
+
+=== Staged Files ===
+a.txt
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+<<<

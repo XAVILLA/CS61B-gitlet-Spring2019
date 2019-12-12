@@ -1,0 +1,36 @@
+> init
+<<<
++ a.txt wug.txt
+> add a.txt
+<<<
+> commit "a = wug"
+<<<
++ a.txt notwug.txt
+> add a.txt
+<<<
+> commit "a = notwug"
+<<<
+D UID "[a-f0-9]+"
+D HEADER "commit (${UID})"
+D DATE "Date: \w\w\w \w\w\w \d+ \d\d:\d\d:\d\d \d\d\d\d [-+]\d\d\d\d"
+> log
+===
+${HEADER}
+${DATE}
+a = notwug
+
+===
+${HEADER}
+${DATE}
+a = wug
+
+===
+${HEADER}
+${DATE}
+initial commit
+<<<*
+D NOTWUG "${1}"
+D WUG "${2}"
+> reset ${WUG}
+<<<
+= a.txt wug.txt

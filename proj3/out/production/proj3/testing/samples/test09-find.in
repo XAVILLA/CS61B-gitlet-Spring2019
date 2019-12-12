@@ -1,0 +1,59 @@
+> init
+<<<
++ a.txt wug.txt
+> add a.txt
+<<<
+> commit "change a.txt"
+<<<
++ b.txt notwug.txt
+> add b.txt
+<<<
+> commit "add b.txt"
+<<<
++ a.txt wug2.txt
+> add a.txt
+<<<
+> commit "change a.txt"
+<<<
+D UID "[a-f0-9]+"
+D HEADER "commit (${UID})"
+D DATE "Date: \w\w\w \w\w\w \d+ \d\d:\d\d:\d\d \d\d\d\d [-+]\d\d\d\d"
+> log
+===
+${HEADER}
+${DATE}
+change a.txt
+
+===
+${HEADER}
+${DATE}
+add b.txt
+
+===
+${HEADER}
+${DATE}
+change a.txt
+
+===
+${HEADER}
+${DATE}
+initial commit
+
+<<<*
+# UID of 4th
+D UID4 "${1}"
+# UID of 3rd
+D UID3 "${2}"
+# UID of 4th
+D UID2 "${3}"
+# UID of 3rd
+D UID1 "${4}"
+> find "change a.txt"
+${UID2}\n${UID4}
+<<<
+> find "add b.txt"
+${UID3}
+<<<
+> find "initial commit"
+${UID1}
+<<<

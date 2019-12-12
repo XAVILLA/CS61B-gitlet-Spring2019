@@ -1,0 +1,12 @@
+# Check add stage
+> init
+<<<
++ a.txt wug.txt
+> rm a.txt
+No reason to remove the file.
+<<<
+> add a.txt
+<<<
+> commit "add a.txt"
+<<<
+

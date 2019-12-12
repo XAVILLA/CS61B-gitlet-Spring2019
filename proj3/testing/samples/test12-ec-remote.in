@@ -1,0 +1,58 @@
+C D1
+> init
+<<<
+D DATE "Date: \w\w\w \w\w\w \d+ \d\d:\d\d:\d\d \d\d\d\d [-+]\d\d\d\d"
+D COMMIT_HEAD "commit ([a-f0-9]+)[ \t]*\n(?:Merge:\s+[0-9a-f]{7}\s+[0-9a-f]{7}[ ]*\n)?${DATE}"
+D COMMIT_LOG "(===[ ]*\ncommit [a-f0-9]+[ ]*\n(?:Merge:\s+[0-9a-f]{7}\s+[0-9a-f]{7}[ ]*\n)?${DATE}[ ]*\n(?:.|\n)*?(?=\Z|\n===))"
+
++ a.txt wug.txt
++ b.txt notwug.txt
+> add a.txt
+<<<
+> add b.txt
+<<<
+> commit "Two files, a=wug, b=notwug"
+<<<
+> log
+===
+${COMMIT_HEAD}
+Two files, a=wug, b=notwug
+
+===
+${COMMIT_HEAD}
+initial commit
+
+<<<*
+D R1_TWOFILES "${1}"
+D R1_INIT "${2}"
+
+
+
+C D2
+> init
+<<<
++ c.txt wug2.txt
+> add c.txt
+<<<
+> commit "c=wug2"
+<<<
+> add-remote Repo1 ../D1/.gitlet
+<<<
+> fetch Repo1 master
+<<<
+> checkout Repo1/master
+<<<
+> log
+===
+${COMMIT_HEAD}
+Two files, a=wug, b=notwug
+
+===
+${COMMIT_HEAD}
+initial commit
+
+<<<*
+> checkout master
+<<<
+> reset ${R1_TWOFILES}
+<<<

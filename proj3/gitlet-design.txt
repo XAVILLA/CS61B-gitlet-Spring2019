@@ -1,0 +1,17 @@
+Gitlet Design Document
+----------------------
+
+
+Classes and Data Structures
+---------------------------
+CommitTree.java
+Commit.java
+Blob.java
+
+Algorithms
+----------
+BFS for split point
+
+Persistence
+-----------
+...

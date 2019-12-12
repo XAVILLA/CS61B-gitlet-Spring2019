@@ -1,0 +1,20 @@
+> init
+<<<
+> branch other
+<<<
++ a.txt wug.txt
+> add a.txt
+<<<
+> commit "a = wug"
+<<<
+> checkout other
+<<<
++ a.txt wug2.txt
+> add a.txt
+<<<
+> commit "a = wug2"
+<<<
+> merge master
+Encountered a merge conflict.
+<<<
+= a.txt conflict_test_15.txt

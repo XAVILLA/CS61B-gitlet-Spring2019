@@ -1,0 +1,29 @@
+> init
+<<<
+> branch other
+<<<
++ a.txt wug.txt
+> add a.txt
+<<<
+> commit "add a on master"
+<<<
+> checkout other
+<<<
++ b.txt notwug.txt
+> add b.txt
+<<<
+> commit "add b on other"
+<<<
+D HEADER "commit ([a-f0-9]+)"
+D DATE "Date: \w\w\w \w\w\w \d+ \d\d:\d\d:\d\d \d\d\d\d [-+]\d\d\d\d"
+> log
+===
+${HEADER}
+${DATE}
+add b on other
+
+===
+${HEADER}
+${DATE}
+initial commit
+<<<*

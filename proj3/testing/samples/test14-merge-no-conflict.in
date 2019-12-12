@@ -1,0 +1,20 @@
+> init
+<<<
+> branch other
+<<<
++ a.txt wug.txt
+> add a.txt
+<<<
+> commit "add a"
+<<<
+> checkout other
+<<<
++ b.txt wug2.txt
+> add b.txt
+<<<
+> commit "add b"
+<<<
+> merge master
+<<<
+= a.txt wug.txt
+= b.txt wug2.txt
